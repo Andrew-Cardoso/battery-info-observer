@@ -1,0 +1,19 @@
+{
+  "name": "battery-info",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "ts": "tsc --watch",
+    "sass": "sass --watch dev/sass/style.sass public/styles/app.css",
+    "start": "http-server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.0",
+    "sass": "^1.49.8",
+    "typescript": "^4.5.5"
+  }
+}

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@1,700&display=swap')
+    
+$bg: #0E0D26
+$battery-main-color: #C07597
+$title-color: #345386
+$default-color: #4272A9
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+
+html,
+body,
+main
+    background: $bg
+    width: 100vw
+    height: 100vh
+
+main
+    display: grid
+    place-items: center
+    color: $default-color
+    grid-template-rows: .2fr 1fr
+    grid-template-columns: .3fr 1fr
+    grid-template-areas: "title title" "battery info"
+
+#title
+    grid-area: title
+
+    h1
+        color: $title-color
+        font-size: 3rem
+        font-family: 'Space Mono'
+        font-style: italic
+        font-weight: 700
+
+
+#battery
+    grid-area: battery
+    width: 100%
+    max-width: 220px
+    height: 100%
+    max-height: min(450px, 40vw)
+    position: relative
+    display: flex
+    padding: 16px
+    flex-direction: column
+    justify-content: flex-end
+    row-gap: 16px
+    border: 12px solid $battery-main-color
+    border-radius: 16px
+
+    &::before
+        content: ''
+        position: absolute
+        top: max(-40px, -4vw)
+        left: 25%
+        width: 50%
+        height: 40px
+        max-height: 3vw
+        background: $battery-main-color
+        align-self: flex-start
+        border-radius: 8px 8px 0 0
+
+    .charge
+        flex: .25 4 auto
+        background: $battery-main-color
+
+#info
+    grid-area: info
+    justify-self: start
+
+    ul
+        list-style: url('../images/information-variant.svg')
+
+    strong
+        font-family: fantasy
+        color: $battery-main-color
+        font-size: 1.5rem
+
+    span
+        color: $default-color
+        font-size: 1.6rem
